@@ -1,0 +1,53 @@
+name: tianocore
+on:
+  ##
+  ## 该仓库有更新时，也mirror
+  push:
+  ##
+  ## 参考 https://www.cnblogs.com/mq0036/p/12930998.html
+  ## 12个小时mirror一次
+  schedule:
+    - cron: '0 */12 * * *'
+jobs:
+
+  tianocore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: tianocore
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/tianocore
+          dst: gitee/tianocore-mirror
+          dst_key: ${{secrets.SSH0_PR}}
+          dst_token: ${{secrets.GITEE_TOKEN_TIANOCORE_MIRROR}}
+          debug: true
+          src_account_type: org
+          dst_account_type: user
+          
+  tianocore-training:
+    runs-on: ubuntu-latest
+    steps:
+      - name: tianocore-training
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/tianocore-training
+          dst: gitee/tianocore-training-mirror
+          dst_key: ${{secrets.SSH1_PR}}
+          dst_token: ${{secrets.GITEE_TOKEN_TIANOCORE_TRAINING_MIRROR}}
+          debug: true
+          src_account_type: org
+          dst_account_type: user
+
+  tianocore-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: tianocore-docs
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/tianocore-docs
+          dst: gitee/tianocore-training-mirror
+          dst_key: ${{secrets.SSH1_PR}}
+          dst_token: ${{secrets.TIANOCORE_TRAINING_MIRROR_GITEE_TOKEN}}
+          debug: true
+          src_account_type: org
+          dst_account_type: user
