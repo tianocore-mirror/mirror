@@ -47,7 +47,7 @@ jobs:
           src: github/tianocore-docs
           dst: gitee/tianocore-training-mirror
           dst_key: ${{secrets.SSH1_PR}}
-          dst_token: ${{secrets.TIANOCORE_TRAINING_MIRROR_GITEE_TOKEN}}
+          dst_token: ${{secrets.GITEE_TOKEN_TIANOCORE_TRAINING_MIRROR}}
           debug: true
           src_account_type: org
           dst_account_type: user
