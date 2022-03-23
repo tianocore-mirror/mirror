@@ -2,12 +2,12 @@ name: tianocore
 on:
   ##
   ## 该仓库有更新时，也mirror
-  push:
+  # push:
   ##
   ## 参考 https://www.cnblogs.com/mq0036/p/12930998.html
   ## 12个小时mirror一次
   schedule:
-    - cron: '0 */12 * * *'
+    - cron: '0 16 * * *'
 jobs:
 
   tianocore:
