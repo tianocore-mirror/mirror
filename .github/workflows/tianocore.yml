@@ -5,7 +5,7 @@ on:
   # push:
   ##
   ## 参考 https://www.cnblogs.com/mq0036/p/12930998.html
-  ## 12个小时mirror一次
+  ## 每天零点mirror一次
   schedule:
     - cron: '0 16 * * *'
 jobs:
